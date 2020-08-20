@@ -69,7 +69,7 @@
 {
     position: absolute;
     padding: 5px;
-    width: 114px;
+    width: 100%;
     background-color: #ff625f;
     display: flex;
     display: none;
