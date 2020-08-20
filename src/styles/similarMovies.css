@@ -15,23 +15,15 @@
 }
 .similar-movie_block #movie-image
 {
-    width: inherit;
+    object-fit: contain;
     height: 250px;
-  
+    transition: 0.5s ease all;
+    
 }
-.similar-movie_block .dark-img
-{
-    width: 200px;
-    height: 250px;
-    position: absolute;
-    transition: 1s ease all;
-    background-color: black;
 
-    opacity: 0;
-}
-.similar-movie_block:hover .dark-img
+.similar-movie_block:hover #movie-image
 {
-    opacity: 0.3;
+    opacity: 0.5;
 }
 .similar-movie_block #movie-title
 {

@@ -136,6 +136,7 @@ class MovieWatch extends React.Component
                     </div>
                 </div>
                 <div className = "row">
+                    
                     <div className = "other-movies_block col xl12 l12 m12 s12">
                         {
                             this.state.similar_movies.map((similar_movie,id) =>{

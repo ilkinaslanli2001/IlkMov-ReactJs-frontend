@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 .row
 {
     margin-left: 0!important;
@@ -64,11 +64,12 @@
 }
 .movie-description_block .movie-description{
   
-   
+    font-family: 'Raleway', sans-serif;
     min-height: 250px;
     font-size: 17px;
     color: #fff;
     padding: 4px!important;
+    letter-spacing: 1.2px;
 }
 video.responsive-video
 {
