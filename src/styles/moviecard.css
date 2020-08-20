@@ -22,9 +22,9 @@
 .moviecard__image
 {
     height: 359px;
-    width: 100%;
+    width: 240px;
     border-radius: 2px;
-    object-fit: contain;
+   
 }
 .moviecard__content
 {
