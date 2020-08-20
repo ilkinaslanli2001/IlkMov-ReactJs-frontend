@@ -20,7 +20,7 @@ class  NewMovies extends React.Component
  componentDidMount()
     {
        
-        axios.get('http://127.0.0.1:8000/api/all_movies/').then(
+        axios.get('https://limitless-reef-63867.herokuapp.com/api/all_movies/').then(
             response =>{
                
                

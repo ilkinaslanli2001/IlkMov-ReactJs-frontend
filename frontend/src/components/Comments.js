@@ -13,7 +13,7 @@ function Comments({movieId, movieTitle}) {
     const [errors, setErrors]  = useState([])
     useEffect(()=>{
         if(movieId!==undefined)
-            axios.get(`http://127.0.0.1:8000/api/comments/?movie=${movieId}`).then(
+            axios.get(`https://limitless-reef-63867.herokuapp.com/api/comments/?movie=${movieId}`).then(
                 response =>{
                   
                     setCommnets(response.data)
@@ -37,7 +37,7 @@ function Comments({movieId, movieTitle}) {
         }
         else
         {
-        axios.post("http://127.0.0.1:8000/api/comments/",{
+        axios.post("https://limitless-reef-63867.herokuapp.com/api/comments/",{
             username:user,
             body:text,
             movie:movieId,

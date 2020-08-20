@@ -30,7 +30,7 @@ class MovieWatch extends React.Component
         const MOVIE_ID = this.props.match.params.id
         
         var query = "?"
-        axios.get(`http://127.0.0.1:8000/api/all_movies/${MOVIE_ID}`).then(
+        axios.get(`https://limitless-reef-63867.herokuapp.com/api/all_movies/${MOVIE_ID}`).then(
             response =>{
                 this.setState({
                    movie:{
@@ -54,7 +54,7 @@ class MovieWatch extends React.Component
                  
                    query += "movieGenre="+ genre.id+"&"
               })
-              return axios.get(`http://127.0.0.1:8000/api/all_movies/${query}`)
+              return axios.get(`https://limitless-reef-63867.herokuapp.com/api/all_movies/${query}`)
                
             }
            

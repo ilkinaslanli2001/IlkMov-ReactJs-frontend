@@ -16,7 +16,7 @@ function SignUp ()
     const onSignUpButtonClick =(event) =>
     {
         event.preventDefault()
-        axios.post('http://127.0.0.1:8000/auth/users/',{
+        axios.post('https://limitless-reef-63867.herokuapp.com/auth/users/',{
             username,
             email,
             password

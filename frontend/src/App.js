@@ -15,14 +15,14 @@ function App() {
     if(!user && REFRESH_TOKEN)
     {
 
-      axios.post('http://127.0.0.1:8000/auth/jwt/refresh/',{
+      axios.post('https://limitless-reef-63867.herokuapp.com/auth/jwt/refresh/',{
         refresh:REFRESH_TOKEN
       }).then(
         
         response =>{
          
           ACCESS_TOKEN = response.data.access
-          return axios.get("http://127.0.0.1:8000/auth/users/me",{
+          return axios.get("https://limitless-reef-63867.herokuapp.com/auth/users/me",{
             headers:{
               Authorization:`JWT ${ACCESS_TOKEN}`
             }

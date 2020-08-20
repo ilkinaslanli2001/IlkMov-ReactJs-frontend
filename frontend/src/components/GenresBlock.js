@@ -9,7 +9,7 @@ class GenresBlock extends React.Component
 
  componentDidMount= () =>
     {
-        axios.get('http://127.0.0.1:8000/api/genres/').then(
+        axios.get('https://limitless-reef-63867.herokuapp.com/api/genres/').then(
             response =>{
                 this.setState({
                     genres:response.data

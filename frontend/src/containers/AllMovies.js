@@ -24,12 +24,12 @@ class AllMovies extends React.Component
 
         // Check if we have page number in sessions then assign it otherwise it will start from 1
         let page_number = window.sessionStorage.getItem('current_page_number') ? window.sessionStorage.getItem('current_page_number') : 1 
-        axios.get(`http://127.0.0.1:8000/api/all_movies/?page=${page_number}`).then(
+        axios.get(`https://limitless-reef-63867.herokuapp.com/api/all_movies/?page=${page_number}`).then(
             response =>{
 
                 this.setState({movies:response.data.results,
                                page_count:Math.ceil(response.data.count/3),
-                               query:`http://127.0.0.1:8000/api/all_movies/?`})
+                               query:`https://limitless-reef-63867.herokuapp.com/api/all_movies/?`})
                
             }
         )
@@ -39,13 +39,13 @@ class AllMovies extends React.Component
     {
         // If user selected some genre then update state with movies with selecte genres
       
-        axios.get(`http://127.0.0.1:8000/api/all_movies/?movieGenre=${genreId}`).then(
+        axios.get(`https://limitless-reef-63867.herokuapp.com/api/all_movies/?movieGenre=${genreId}`).then(
             response =>{
                 console.log(response.data.results)
                 window.sessionStorage.setItem("current_page_number",1)
                 this.setState({movies:response.data.results,
                     page_count:Math.ceil(response.data.count/3),
-                    query:`http://127.0.0.1:8000/api/all_movies/?movieGenre=${genreId}&`})
+                    query:`https://limitless-reef-63867.herokuapp.com/api/all_movies/?movieGenre=${genreId}&`})
             }
         )
     }
@@ -54,12 +54,12 @@ class AllMovies extends React.Component
     searchMovies = (searchQuery) =>
     {
         // If Search button was clicked then update state with movies which was found
-        axios.get(`http://127.0.0.1:8000/api/all_movies/?search=${searchQuery}`).then(
+        axios.get(`https://limitless-reef-63867.herokuapp.com/api/all_movies/?search=${searchQuery}`).then(
             response =>{
                 window.sessionStorage.setItem("current_page_number",1)
                 this.setState({movies:response.data.results,
                     page_count:Math.ceil(response.data.count/3),
-                    query:`http://127.0.0.1:8000/api/all_movies/?search=${searchQuery}&`})
+                    query:`https://limitless-reef-63867.herokuapp.com/api/all_movies/?search=${searchQuery}&`})
             }
         )
     }

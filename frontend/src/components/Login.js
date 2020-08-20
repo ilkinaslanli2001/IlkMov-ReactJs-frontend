@@ -13,7 +13,7 @@ function Login()
         const [{user}, dispatch] = useStateValue()
         const onLoginButtonClick =(event) =>{
             event.preventDefault()
-            axios.post("http://127.0.0.1:8000/auth/jwt/create/",{
+            axios.post("https://limitless-reef-63867.herokuapp.com/auth/jwt/create/",{
                 username,
                 password
             }).then(
