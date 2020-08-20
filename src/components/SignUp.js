@@ -23,7 +23,7 @@ function SignUp ()
         }).then(
             history.push('login/')
         ).catch(response=>{
-            console.warn(response)
+            console.warn(response.data)
         })
     }
     
