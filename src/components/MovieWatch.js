@@ -82,7 +82,7 @@ class MovieWatch extends React.Component
                 <div className="row">
                     <div id="movie-about_block" className="col xl9 l12 m12 s12   movie-about_block">
                         <div className = "row">
-                            <div className = "movie-main-information  col xl3 l5 m4 s12">
+                            <div className = "movie-main-information  col xl3 l5 m12 s12">
                                 <img alt={this.state.movie.movieTitle} src={this.state.movie.moviePoster}  className="movie-poster"  />
                                 <div className="movie-info_block">
                                      <div className="movie-info_items ">
@@ -98,7 +98,7 @@ class MovieWatch extends React.Component
                          
                            
                               
-                            <div className="movie-description_block col offset-xl1 xl8 l7 m8 s12 ">
+                            <div className="movie-description_block col offset-xl1 xl8 l7 m12 s12 ">
                             <h1 id="title">{this.state.movie.movieTitle+" "+new Date(this.state.movie.moviePremierDate).getFullYear()}</h1>
                             <ul className="movie-genres">
                                         

@@ -31,7 +31,7 @@ function Header()
                 <li className="header__item browser-default header__login" >
                     {user ? <p className="header__username"><span>{user} <i class="material-icons">arrow_drop_down</i></span>
                        <ul className="header__dropdown">
-                            <li onClick={logoutUser} className="header__dropdown-item">Log out</li>
+                            <li onClick={logoutUser} className="header__dropdown-item">Logout</li>
                         </ul></p> : <Link replace to='/login'>Sign In</Link> }</li>
                   
         </ul>
