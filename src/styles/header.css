@@ -80,3 +80,8 @@
     display: block;
 }
 
+.header__dropdown-item
+{
+    cursor: pointer;
+    color: #fff;
+}
