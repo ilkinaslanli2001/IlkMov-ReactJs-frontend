@@ -13,11 +13,11 @@ class MovieWatch extends React.Component
             movieTitle:"Loading...",
             movieTrailer:"",
             movieGenres:[],
-            movieFull:"",
-            movieDescription:"",
+        
+            movieDescription:"Loading..",
             movieImage:"",
             movieCountry:[],
-            moviePremierDate:""
+            moviePremierDate:"Loading..."
         },
         similar_movies :[]
         
@@ -76,9 +76,7 @@ class MovieWatch extends React.Component
     
     render()
      { 
-       
-        var elems = document.querySelectorAll('.tabs');
-        var instance = M.Tabs.init(elems);
+     
         return(
             <div  className = "container-fluid">
                 <div className="row">
@@ -116,10 +114,6 @@ class MovieWatch extends React.Component
                                
                              
                           
-                                <ul className="tabs">
-                                    <li className="tab col s3"><a href="#trailer">Trailer</a></li>
-                                    <li className="tab col s3"><a class="active" href="#fullmovie">Full Movie</a></li>
-                                </ul>
                             
                             <div id="trailer" > 
                             <div classNames="video-container">
@@ -130,10 +124,7 @@ class MovieWatch extends React.Component
                             
 
                             </div>
-                            <div id="fullmovie" >
-                                <video src={this.state.movie.movieFull} className="responsive-video" controls  />
-                               
-                            </div>
+                         
                            
                             <Comments movieTitle={this.state.movie.movieTitle} movieId = {this.state.movie.movieId}/>
                                
