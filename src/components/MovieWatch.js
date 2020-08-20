@@ -10,7 +10,7 @@ class MovieWatch extends React.Component
     state = {
         movie:{
             movieid:-1,
-            movieTitle:"",
+            movieTitle:"Loading...",
             movieTrailer:"",
             movieGenres:[],
             movieFull:"",
