@@ -23,7 +23,7 @@
 
 .header__username
 {
-    width: 100%;
+    position: relative;
 }
 .header .header__item
 {
