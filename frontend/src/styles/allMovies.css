@@ -1,0 +1,23 @@
+.all-movies
+{
+    margin-top: 160px;
+    padding: 15px;
+    height: auto;
+    min-height: 100vh;
+}
+.all-movies-wrapper
+{
+    
+    height: 500px;
+    border-radius: 3px;
+    height: auto;
+}
+.pagination_wrapper
+{
+    text-align: center;
+}
+@media only screen and (max-width: 640px) {
+    .all-movies{
+    margin-top: 30px;
+}
+}

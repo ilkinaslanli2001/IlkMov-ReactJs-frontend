@@ -1,0 +1,47 @@
+.newmovie
+{
+    background-position: center!important;
+    background-size: cover!important;
+    min-height: 85vh;
+    color: #ddd;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+   
+}
+
+.newmovie__title
+{
+    font-size: 5rem;
+}
+.newmovie__description
+{
+    padding: 8px;
+    max-width: 350px;
+    letter-spacing: 1.2px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.newmovie__genres .genre
+{
+    display: inline-block;
+    padding: 10px;
+    text-decoration: underline;
+}
+.newmovie__button
+{
+    width: 100%;
+    color: white;
+    text-transform: uppercase;
+    background: tomato;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    border: 1px solid;
+    transition: .3s ease all;
+}
+.newmovie__button:hover
+{
+    background-color: #14a76c;
+    border: 1px solid #14a76c;
+
+}

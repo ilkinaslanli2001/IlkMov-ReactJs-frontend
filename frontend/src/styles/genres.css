@@ -1,0 +1,35 @@
+
+.genres-display
+{
+   
+    margin-top: 90px;
+    min-height: 200px;
+    width: 213px;
+    padding: 8px 4px 8px 4px;
+    float: left;
+    border-radius: 2px;
+    font-size: 17px;
+    letter-spacing: 1px;
+  
+}
+.genres-display .genres-items .genre-item
+{
+    color: #fff;
+    margin: 16px;
+    transition: 0.5s ease all;
+    cursor: pointer;
+   
+}
+.genres-display .genres-items .genre-item:hover
+{
+    color:#FFE400;
+    
+}
+@media only screen and (max-width: 740px)
+{
+    .genres-display
+    {
+        margin-top: 0;
+        font-size: 15px;
+    }
+}

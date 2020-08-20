@@ -1,0 +1,78 @@
+import React from "react"
+
+import '../styles/newMovie.css'
+
+import axios from "axios"
+
+import   'materialize-css'
+import { Link } from "react-router-dom"
+class  NewMovies extends React.Component
+{
+    
+    state = {
+        
+        movieScreen:[],
+        movieTitle:"",
+        movieGenres :[],
+        movieDescription:""
+    }
+    
+ componentDidMount()
+    {
+       
+        axios.get('http://127.0.0.1:8000/api/all_movies/').then(
+            response =>{
+               
+               
+                if(response.data.results.length >0)
+                    this.setState({
+                                movieId:response.data.results[0].id,
+                                movieScreen:response.data.results[0].movieScreen,
+                                movieTitle:response.data.results[0].movieTitle,
+                                movieGenres:response.data.results[0].movieGenre,
+                                movieDescription:response.data.results[0].movieDescription})
+              
+            }
+        )   
+  }
+    
+    getTrailer = (e) =>
+    {
+        this.setState({movieTrailer:e})   
+    }
+  
+    render()
+    {
+      
+        
+        
+        return(
+            
+            
+            <div className="row newmovie " style={{
+                backgroundImage:`linear-gradient(45deg, black, transparent),url(${this.state.movieScreen})`}}>
+              
+                    <div className="newmovie__info">
+                    
+                            <h1 className="newmovie__title">{this.state.movieTitle}</h1>
+                            <p className="newmovie__description">{this.state.movieDescription}</p>
+                            
+                            <ul className="newmovie__genres">
+                                {this.state.movieGenres.map((genre,index) =>{
+                                return  <li key={index} className="genre">{genre.movieGenre}</li>
+                                })}
+                                
+                            </ul>
+                            <Link to={`movie/${this.state.movieId}`} className="newmovie__button">Watch</Link>
+                    
+                        </div>   
+             
+             
+                        
+             
+            </div>
+                    
+        )
+    }
+}
+export default NewMovies

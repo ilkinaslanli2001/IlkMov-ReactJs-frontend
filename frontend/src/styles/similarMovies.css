@@ -1,0 +1,44 @@
+.similar-movie_block
+{
+    height: 300px;
+    width: 200px;
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+    cursor: pointer;
+    
+   
+}
+.similar-movie_block:hover #movie-title
+{
+    color:#ff662fa8
+}
+.similar-movie_block #movie-image
+{
+    width: inherit;
+    height: 250px;
+  
+}
+.similar-movie_block .dark-img
+{
+    width: 200px;
+    height: 250px;
+    position: absolute;
+    transition: 1s ease all;
+    background-color: black;
+
+    opacity: 0;
+}
+.similar-movie_block:hover .dark-img
+{
+    opacity: 0.3;
+}
+.similar-movie_block #movie-title
+{
+    font-size: 15px;
+    margin-top: 2px;
+    color: white;
+    transition: 0.2s all ease;
+    letter-spacing: 1.2px;
+    height: auto;
+}
