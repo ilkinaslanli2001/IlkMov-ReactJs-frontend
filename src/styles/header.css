@@ -21,7 +21,10 @@
     margin-bottom: 0;
 }
 
-
+.header__username
+{
+    width: 100%;
+}
 .header .header__item
 {
     display: flex;
