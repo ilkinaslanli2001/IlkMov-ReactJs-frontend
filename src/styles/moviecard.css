@@ -24,6 +24,7 @@
     height: 359px;
     width: 100%;
     border-radius: 2px;
+    object-fit: contain;
 }
 .moviecard__content
 {
