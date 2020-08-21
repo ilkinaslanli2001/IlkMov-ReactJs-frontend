@@ -54,7 +54,7 @@ class  NewMovies extends React.Component
               
                     <div className="newmovie__info">
                     
-                            <h1 className="newmovie__title">{this.state.movieTitle}</h1>
+                            <h2 className="newmovie__title">{this.state.movieTitle}</h2>
                             <p className="newmovie__description">{this.state.movieDescription}</p>
                             
                             <ul className="newmovie__genres">

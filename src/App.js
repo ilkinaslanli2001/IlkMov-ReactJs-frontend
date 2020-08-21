@@ -9,6 +9,7 @@ import   'materialize-css'
 
 function App() {
   const [{user}, dispatch] = useStateValue()
+
   useEffect(()=>{
     let ACCESS_TOKEN = undefined
     const REFRESH_TOKEN = localStorage.getItem('refresh')

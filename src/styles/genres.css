@@ -1,5 +1,5 @@
 
-.genres-display
+.genres__wrapper
 {
    
     margin-top: 90px;
@@ -12,7 +12,7 @@
     letter-spacing: 1px;
   
 }
-.genres-display .genres-items .genre-item
+.genres__items .genres__item
 {
     color: #fff;
     margin: 16px;
@@ -20,16 +20,23 @@
     cursor: pointer;
    
 }
-.genres-display .genres-items .genre-item:hover
+.genres__items .genres__item:hover
 {
     color:#FFE400;
     
 }
 @media only screen and (max-width: 740px)
 {
-    .genres-display
+    .genres__wrapper
     {
         margin-top: 0;
         font-size: 15px;
+    }
+}
+@media only screen and (max-width: 825px)
+{
+    .genres
+    {
+        display: none;
     }
 }

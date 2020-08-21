@@ -21,13 +21,13 @@ class GenresBlock extends React.Component
     render(){
     
         return(
-            <div className="genres-wrapper  col xl2 l2 m2 s12">
-            <div className = "genres-display">
-                    <ul className="genres-items">
+            <div className="genres  col xl2 l2 m2 s12">
+            <div className = "genres__wrapper">
+                    <ul className="genres__items">
                       
                     {this.state.genres.map((genre) =>{
                             return(
-                            <li onClick={e => this.props.filterMoviesByGenres(genre.id)}  key={genre.movieGenre} className="genre-item">{genre.movieGenre}</li>
+                            <li onClick={e => this.props.filterMoviesByGenres(genre.id)}  key={genre.movieGenre} className="genres__item">{genre.movieGenre}</li>
                             )
                         })}
 

@@ -13,8 +13,8 @@ class AllMoviesCard extends React.Component
         return(
             <div className="moviecard">
                <div className="moviecard__wrapper row">
-                    <div className="moviecard__content col l8 xl6 m7 s10">
-                            <h1 id="moviecard__title">{this.props.movie.movieTitle+" ("+ new Date(this.props.movie.moviePremierDate).getFullYear()+")"}</h1>
+                    <div className="moviecard__content col  xl6 l8 m7 s12">
+                            <h2 id="moviecard__title">{this.props.movie.movieTitle+" ("+ new Date(this.props.movie.moviePremierDate).getFullYear()+")"}</h2>
                             
                                 <p id="moviecard__description">
                                     {
@@ -37,7 +37,7 @@ class AllMoviesCard extends React.Component
                     </div>
                     
                    <Link to={{pathname:`movie/${this.props.movie.id}` }}>
-                    <div className="moviecard__image-wrapper col l4 s12 xl3 m5">
+                    <div className="moviecard__image-wrapper col xl3 l4 s12  m5">
                         <span className="moviecard__button">Watch <i class="material-icons">weekend</i></span>
                       
                          <img alt={this.props.movie.movieTitle} src={this.props.movie.moviePoster} className="moviecard__image"></img>

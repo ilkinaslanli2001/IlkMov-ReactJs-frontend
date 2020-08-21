@@ -42,7 +42,26 @@
     transition: 0.5s ease all;
 
 }
-
+.header__hamburger
+{
+    margin: 10px;
+}
+.header__item-hamburger
+{
+    display: none;
+}
+.header__hamburger-stick
+{
+    
+ 
+    display: block;
+    background-color: tomato;
+    margin: 6px;
+    width: 25px;
+    height: 4px;
+    border-radius: 3px;
+    display: block;
+}
 .header__logo img
 {
     display: flex;
@@ -96,4 +115,13 @@
     justify-content: center;
     align-items: center;
     font-size: 16px;
+}
+@media only screen and (max-width: 825px)
+{
+    .header__item-hamburger
+    {
+
+        display: flex;
+        align-items: center;
+    }
 }

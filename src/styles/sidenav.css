@@ -1,0 +1,18 @@
+.sidenav
+{
+    background-color: #222222;
+}
+.sidenav__genre
+{
+   
+    color: #fff;
+    margin: 16px;
+    transition: 0.5s ease all;
+    cursor: pointer;
+   
+}
+.sidenav__genre:hover
+{
+    color:#FFE400;
+    
+}

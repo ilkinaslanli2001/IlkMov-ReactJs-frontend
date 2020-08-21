@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import   'materialize-css'
 import '../styles/header.css'
 import { Link } from "react-router-dom"
@@ -12,7 +12,7 @@ function Header()
     
     
     const [{user}, dispatch] = useStateValue()
-   
+    
     const logoutUser=() =>
     {
         dispatch({
@@ -25,7 +25,14 @@ function Header()
     
     return(
         <ul className = "header">
-            
+
+                <li className="header__item-hamburger">
+                    <div  data-target="slide-out"   className="header__hamburger sidenav-trigger">
+                        <span  className="header__hamburger-stick"></span>
+                        <span className="header__hamburger-stick"></span>
+                        <span className="header__hamburger-stick"></span>
+                    </div>
+                </li>
                 <li className="header__item header__logo"><Link to='/'><img src={logo} /></Link></li>
                 
                 <li className="header__item browser-default header__login" >

@@ -3,7 +3,8 @@
 
 export const initialState = {
   
-    user:null
+    user:null,
+    genres:[]
     
 }
 
@@ -26,8 +27,11 @@ const  reducer = (state, action) =>{
               
                 user:null
             }
-        default:
-            return state
+
+
+
+
+      
     }
 }
 export default reducer

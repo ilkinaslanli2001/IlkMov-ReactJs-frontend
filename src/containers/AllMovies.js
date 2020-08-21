@@ -2,6 +2,7 @@ import React from "react"
 import 'materialize-css'
 import GenresBlock from '../components/GenresBlock'
 import MovieCard from '../components/MovieCard'
+import Sidebox from '../components/Sidebox'
 import SearchBlock from '../components/SearchBlock'
 import '../styles/allMovies.css'
 import '../styles/pagination.css'
@@ -119,10 +120,10 @@ class AllMovies extends React.Component
     {
         return(
         <div id="all-movies" className = "all-movies row">
-
+                <Sidebox filterMoviesByGenres={this.filterMoviesByGenres} />
                 <GenresBlock filterMoviesByGenres={this.filterMoviesByGenres} />
                 <SearchBlock searchMovies={this.searchMovies} />
-                <div id="all-movies-wrapper" className="all-movies-wrapper offset-l1 offset-xl1 col l9 xl9 m10">
+                <div id="all-movies-wrapper" className="all-movies-wrapper offset-l1 offset-xl1 col l9 xl9 m12">
                 
                   {
                       // Displays All Movies
@@ -143,10 +144,6 @@ class AllMovies extends React.Component
 
                             {this.getPages()}
                            
-
-                          
-                     
-
                         </ul>
 
                     </div>
