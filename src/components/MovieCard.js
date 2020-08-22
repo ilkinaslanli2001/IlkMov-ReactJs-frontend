@@ -14,8 +14,9 @@ class AllMoviesCard extends React.Component
             <div className="moviecard">
                <div className="moviecard__wrapper row">
                     <div className="moviecard__content col  xl6 l8 m7 s12">
+                    <Link to={{pathname:`movie/${this.props.movie.id}` }}>
                             <h2 id="moviecard__title">{this.props.movie.movieTitle+" ("+ new Date(this.props.movie.moviePremierDate).getFullYear()+")"}</h2>
-                            
+                    </Link>    
                                 <p id="moviecard__description">
                                     {
                                         this.truncateText(this.props.movie.movieDescription)

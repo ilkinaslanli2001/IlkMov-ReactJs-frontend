@@ -53,7 +53,16 @@ function Comments({movieId, movieTitle}) {
         )
         }
     }
+    const convertDate =(date) =>
+    {
     
+        // Get day, full month name and year 
+        date = new Date(date)
+        const month = date.toLocaleString('en-GB', {month:'long'})
+        return date.getDate()+" "+month+" "+date.getFullYear()+" "+date.getHours()+":"+date.getMinutes()
+  
+    
+    }
     return (
         <div className="comments">
             <div className="comments__all">
@@ -61,7 +70,7 @@ function Comments({movieId, movieTitle}) {
                     return(
                         <div key={comment.id} className="comments__item">
                             <span className="comments__item-username">{comment.username}:</span>
-                            <span className="comments__item-date">{comment.created_on}</span>
+                            <span className="comments__item-date">{convertDate(comment.created_on)}</span>
                             <p className="comments__item-body">{comment.body}</p>
                           </div>
                     )
