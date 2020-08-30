@@ -2,7 +2,7 @@
 {
     text-align: center;
 }
-.pagination-items .pagination-item
+.pagination-items .pagination-item 
 {
     width: 40px;
     height: 40px;
@@ -13,11 +13,11 @@
     transition: 1s ease all;
     font-size: 20px;
     cursor: pointer;
-    color: rgb(235, 235, 235);
+    color: rgb(235, 235, 235)!important;
     background-color: #121212;
 }
 
-.pagination-items .active,.pagination-item:hover
+.pagination-items .active,.pagination-item:hover 
 {
     background-color: #ff625f;
   

@@ -1,4 +1,4 @@
-import React from "react"
+import React,{useState, useEffect} from "react"
 import 'materialize-css'
 import GenresBlock from '../components/GenresBlock'
 import MovieCard from '../components/MovieCard'
@@ -7,84 +7,81 @@ import SearchBlock from '../components/SearchBlock'
 import '../styles/allMovies.css'
 import '../styles/pagination.css'
 import axios from "axios"
-class AllMovies extends React.Component
+function AllMovies({genreId})
 {
-    state = {
-        movies:[],
-        page_count:0,
+    const [movies, setMovies] = useState([])
+    const [page_count, setPage_count] = useState(0)
+    const [query, setQuery] = useState("")
+   
 
-        // Query will change according to what we selected (filtering by genres or titles) for making a correct query for pagination
-        query:""
-        
-      
-    }
+   
+    useEffect(()=>{
+            if(genreId)
+            axios.get(`https://limitless-reef-63867.herokuapp.com/api/all_movies/?movieGenre=${genreId}`).then(
+                    response =>{
+                        console.log(response.data.results)
+                        window.sessionStorage.setItem("current_page_number",1)
+                        setMovies(response.data.results)
+                        setPage_count(Math.ceil(response.data.count/3))
+                        setQuery(`https://limitless-reef-63867.herokuapp.com/api/all_movies/?movieGenre=${genreId}&`)
+                       
+                    }
+                )
+            else
+            {
+                axios.get(`https://limitless-reef-63867.herokuapp.com/api/all_movies/`).then(
+                        response =>{
+                         
+                            window.sessionStorage.setItem("current_page_number",1)
+                            setMovies(response.data.results)
+                            setPage_count(Math.ceil(response.data.count/3))
+                            setQuery(`https://limitless-reef-63867.herokuapp.com/api/all_movies/?`)
+                        
+                        })
+             }
+    },[genreId])
 
-
-    componentDidMount = () =>
-    {
-
-        // Check if we have page number in sessions then assign it otherwise it will start from 1
-        let page_number = window.sessionStorage.getItem('current_page_number') ? window.sessionStorage.getItem('current_page_number') : 1 
-        axios.get(`https://limitless-reef-63867.herokuapp.com/api/all_movies/?page=${page_number}`).then(
-            response =>{
-
-                this.setState({movies:response.data.results,
-                               page_count:Math.ceil(response.data.count/3),
-                               query:`https://limitless-reef-63867.herokuapp.com/api/all_movies/?`})
-               
-            }
-        )
-    }
-    // Callback function for GenresBlock
-    filterMoviesByGenres = (genreId) =>
-    {
-        // If user selected some genre then update state with movies with selecte genres
-      
-        axios.get(`https://limitless-reef-63867.herokuapp.com/api/all_movies/?movieGenre=${genreId}`).then(
-            response =>{
-                console.log(response.data.results)
-                window.sessionStorage.setItem("current_page_number",1)
-                this.setState({movies:response.data.results,
-                    page_count:Math.ceil(response.data.count/3),
-                    query:`https://limitless-reef-63867.herokuapp.com/api/all_movies/?movieGenre=${genreId}&`})
-            }
-        )
-    }
+   // Callback function for GenresBlock
+  
 
     // Callback function for SearchBlock component
-    searchMovies = (searchQuery) =>
+   const searchMovies = (searchQuery) =>
     {
         // If Search button was clicked then update state with movies which was found
         axios.get(`https://limitless-reef-63867.herokuapp.com/api/all_movies/?search=${searchQuery}`).then(
             response =>{
                 window.sessionStorage.setItem("current_page_number",1)
-                this.setState({movies:response.data.results,
-                    page_count:Math.ceil(response.data.count/3),
-                    query:`https://limitless-reef-63867.herokuapp.com/api/all_movies/?search=${searchQuery}&`})
+                setMovies(response.data.results)
+                setPage_count(Math.ceil(response.data.count/3))
+                setQuery(`https://limitless-reef-63867.herokuapp.com/api/all_movies/?search=${searchQuery}&`)
+                
             }
         )
     }
-    getPages = () =>
+  const  getPages = () =>
     {
         const items = []
         let current_page_number = window.sessionStorage.getItem('current_page_number') ? window.sessionStorage.getItem('current_page_number') :1 
       
-        for (let i=0;i<this.state.page_count;i++)
+        for (let i=0;i<page_count;i++)
         {
             
-            if(i+1 === Number(current_page_number))
-                items.push(  <li onClick={e=>this.onPageClick(e)} key={i+1} className="pagination-item active">{i+1}</li>)
-            else
-                items.push(  <li onClick={e=>this.onPageClick(e)} key = {i+1 }className="pagination-item">{i+1}</li>)
+            // if(i+1 === Number(current_page_number))
+            //     items.push(  <li onClick={e=>onPageClick(e)} key={i+1} className="pagination-item active">{i+1}</li>)
+            // else
+            //     items.push(  <li onClick={e=>onPageClick(e)} key = {i+1 }className="pagination-item">{i+1}</li>)
 
-            
+            if(i+1 === Number(current_page_number))
+                items.push(  <li onClick={e=>onPageClick(e)} key={i+1} className="pagination-item active">{i+1}</li>)
+            else
+                items.push(  <li onClick={e=>onPageClick(e)} key = {i+1 }className="pagination-item">{i+1}</li>)
         }
         return items
     }
 
 
 
-    onPageClick = (e) =>
+  const  onPageClick = (e) =>
     {
 
     
@@ -100,7 +97,7 @@ class AllMovies extends React.Component
         e.target.className+=" active"
       
        
-        axios.get(`${this.state.query}page=${current_page_number}`).then(
+        axios.get(`${query}page=${current_page_number}`).then(
             response =>
             
             {
@@ -109,25 +106,24 @@ class AllMovies extends React.Component
                
                 var all_movies = document.getElementById("all-movies")
                 all_movies.scrollIntoView(true)
-                this.setState({movies:response.data.results,
-                    page_count:Math.ceil(response.data.count/3)})
+                setMovies(response.data.results)
+                setPage_count(Math.ceil(response.data.count/3))
                
             
             }
         )
     }
-    render()
-    {
+   
         return(
         <div id="all-movies" className = "all-movies row">
-                <Sidebox filterMoviesByGenres={this.filterMoviesByGenres} />
-                <GenresBlock filterMoviesByGenres={this.filterMoviesByGenres} />
-                <SearchBlock searchMovies={this.searchMovies} />
+              
+                <GenresBlock />
+                <SearchBlock searchMovies={searchMovies} />
                 <div id="all-movies-wrapper" className="all-movies-wrapper offset-l1 offset-xl1 col l9 xl9 m12">
                 
                   {
                       // Displays All Movies
-                    this.state.movies.map(movie=>{ 
+                    movies.map(movie=>{ 
                     return(
 
                         <MovieCard key={movie.id} movie = {movie} />
@@ -142,7 +138,7 @@ class AllMovies extends React.Component
 
                         <ul className="pagination-items">
 
-                            {this.getPages()}
+                            {getPages()}
                            
                         </ul>
 
@@ -151,5 +147,5 @@ class AllMovies extends React.Component
          </div>
         )
     }
-}
+
 export default AllMovies

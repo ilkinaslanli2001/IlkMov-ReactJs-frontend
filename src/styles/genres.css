@@ -4,7 +4,7 @@
    
     margin-top: 90px;
     min-height: 200px;
-    width: 213px;
+    width: 100%;
     padding: 8px 4px 8px 4px;
     float: left;
     border-radius: 2px;
@@ -12,17 +12,19 @@
     letter-spacing: 1px;
   
 }
-.genres__items .genres__item
+.genres__items .genres__item a
 {
     color: #fff;
     margin: 16px;
     transition: 0.5s ease all;
     cursor: pointer;
+    display: block;
    
 }
-.genres__items .genres__item:hover
+.genres__items .genres__item:hover a
 {
     color:#FFE400;
+
     
 }
 @media only screen and (max-width: 740px)
@@ -32,11 +34,16 @@
         margin-top: 0;
         font-size: 15px;
     }
+   
 }
 @media only screen and (max-width: 825px)
 {
     .genres
     {
         display: none;
+    }
+    .sidenav .genres
+    {
+        display: block;
     }
 }

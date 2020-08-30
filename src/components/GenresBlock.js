@@ -1,6 +1,7 @@
 import React from "react"
 import '../styles/genres.css'
 import axios from 'axios'
+import { Link } from "react-router-dom"
 class GenresBlock extends React.Component
 {
     state = {
@@ -27,7 +28,7 @@ class GenresBlock extends React.Component
                       
                     {this.state.genres.map((genre) =>{
                             return(
-                            <li onClick={e => this.props.filterMoviesByGenres(genre.id)}  key={genre.movieGenre} className="genres__item">{genre.movieGenre}</li>
+                            <li   key={genre.movieGenre} className="genres__item sidenav-close"><Link to={`/genre/${genre.id}`}>{genre.movieGenre}</Link></li>
                             )
                         })}
 

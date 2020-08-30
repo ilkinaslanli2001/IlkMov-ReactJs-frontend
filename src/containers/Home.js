@@ -6,11 +6,12 @@ class Home extends React.Component
 {
     render()
     {
+        
         return(
             <div  className= "container-fluid">
                     <NewMovie/>
 
-                    <AllMovies/>
+                    <AllMovies  genreId={this.props.match.params.id}/>
                     
             </div>
         )
