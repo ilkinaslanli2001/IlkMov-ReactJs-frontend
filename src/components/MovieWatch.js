@@ -5,6 +5,7 @@ import axios from "axios"
 import M from 'materialize-css'
 import SimilarMovies from './SimilarMovies'
 import Comments from './Comments'
+import {Link} from 'react-router-dom'
 class MovieWatch extends React.Component
 {
     state = {
@@ -104,7 +105,7 @@ class MovieWatch extends React.Component
                                         
                                         {
                                             this.state.movie.movieGenres.map((genre) =>{
-                                            return <li id="genre-item" key={genre.movieGenre}>{genre.movieGenre}</li>
+                                            return <li id="genre-item" key={genre.movieGenre}><Link to={`/genre/${genre.id}`}>{genre.movieGenre}</Link></li>
                                             })
                                         }
                                     

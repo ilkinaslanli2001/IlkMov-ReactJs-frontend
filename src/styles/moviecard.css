@@ -92,8 +92,12 @@
     padding: 5px 10px 5px 10px;
     border-radius: 20px;
     background: #14a76c;
+   
 }
-
+.moviecard__genres-items .moviecard__genre-item a
+{
+    color: #fff;
+}
 .moviecard__image_wrapper
 {
     position: relative;

@@ -18,11 +18,16 @@
     letter-spacing: 1.2px;
     font-family: Arial, Helvetica, sans-serif;
 }
-.newmovie__genres .genre
+.newmovie__genres .genre 
 {
     display: inline-block;
     padding: 10px;
     text-decoration: underline;
+   
+}
+.newmovie__genres .genre  a
+{
+    color: #fff;
 }
 .newmovie__button
 {

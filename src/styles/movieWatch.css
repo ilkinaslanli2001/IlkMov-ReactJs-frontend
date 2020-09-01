@@ -97,6 +97,10 @@ video.responsive-video
     background: purple;
 
 }
+.movie-genres #genre-item a
+{
+    color: #fff;
+}
 .movie-trailer
 {
     width: 100%;
