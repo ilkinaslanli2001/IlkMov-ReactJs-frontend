@@ -37,7 +37,7 @@ class AllMoviesCard extends React.Component
                            
                     </div>
                     
-                   <Link to={{pathname:`movie/${this.props.movie.id}` }}>
+                   <Link to={{pathname:`/movie/${this.props.movie.id}` }}>
                     <div className="moviecard__image-wrapper col xl3 l4 s12  m5">
                         <span className="moviecard__button">Watch <i className="material-icons">weekend</i></span>
                       
