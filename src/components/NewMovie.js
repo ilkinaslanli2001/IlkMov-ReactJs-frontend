@@ -59,7 +59,7 @@ class  NewMovies extends React.Component
                             
                             <ul className="newmovie__genres">
                                 {this.state.movieGenres.map((genre,index) =>{
-                                return  <li key={index} className="genre"><Link to={`/genre/${genre.id}`}>{genre.movieGenre}</Link></li>
+                                return  <li key={index} className="genre"><Link to={`?genre=${genre.id}&page=1`}>{genre.movieGenre}</Link></li>
                                 })}
                                 
                             </ul>

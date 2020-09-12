@@ -105,7 +105,7 @@ class MovieWatch extends React.Component
                                         
                                         {
                                             this.state.movie.movieGenres.map((genre) =>{
-                                            return <li id="genre-item" key={genre.movieGenre}><Link to={`/genre/${genre.id}`}>{genre.movieGenre}</Link></li>
+                                            return <li id="genre-item" key={genre.movieGenre}><Link to={`/?genre=${genre.id}&page=1`}>{genre.movieGenre}</Link></li>
                                             })
                                         }
                                     
