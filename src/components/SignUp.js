@@ -21,9 +21,14 @@ function SignUp ()
             email,
             password
         }).then(
-            history.push('login/')
-        ).catch(response=>{
-            console.warn(response.data)
+            response =>{
+                console.log(response)
+                history.push('login/')
+            }
+            
+          
+        ).catch(error=>{
+            console.warn(error)
         })
     }
     
@@ -42,8 +47,6 @@ function SignUp ()
                 <span className="span">Password:</span>
                 <input value={password} onChange={(event)=>setPassword(event.target.value)} className="browser-default" required type="password" placeholder="Enter your Password" />
 
-                <span className="span">Password:</span>
-                <input className="browser-default" required type="password" placeholder="Re-enter your Password" />
                 <button onClick={onSignUpButtonClick} type="submit" className="login_button">Sign Up</button>
             </form>
             <div className="links_block">
